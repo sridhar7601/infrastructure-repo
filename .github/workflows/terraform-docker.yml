@@ -1,6 +1,7 @@
 name: Terraform & Docker Deployment
+
 on:
-  workflow_call:
+  workflow_call:  # Called by app-repo
     inputs:
       environment:
         required: true
@@ -14,6 +15,8 @@ on:
         required: true
       DOCKER_PASSWORD:
         required: true
+
+  workflow_dispatch:  # Manually trigger this workflow in infrastructure-repo
 
 jobs:
   deploy:
